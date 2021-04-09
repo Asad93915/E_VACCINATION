@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Signup_Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="124dp"
+                android:id="@+id/logoUp"
+                android:layout_gravity="center"
+                android:layout_height="150dp"
+                android:src="@drawable/ev9" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Create Your Account"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20sp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:id="@+id/fistName"
+                android:hint="Fist Name"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+            <EditText
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/lastName"
+                android:inputType="text"
+                android:hint="Last Name"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:inputType="phone"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/phoneNo"
+                android:hint="Phone Number"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/email"
+                android:hint="E-Mail"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/password"
+                android:hint="Password"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/black"
+                android:id="@+id/cPassword"
+                android:inputType="textPassword"
+                android:hint="Confirm Password"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:id="@+id/radioGroup"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vaccinator"
+                    android:layout_marginLeft="30dp"
+                    android:text="Vaccinator"
+                    android:textSize="12sp"
+                    android:textAllCaps="false"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/black"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patient"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12sp"
+                    android:text="Patient"
+                    android:textAllCaps="false"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:buttonTint="@color/black"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="#F0B66B"
+                android:text="Sign Up"
+                android:textAllCaps="false" />
+
+
+            <TextView
+                android:id="@+id/alreadyHaveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:layout_gravity="center"
+                android:text="Already have account signIn ?"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
