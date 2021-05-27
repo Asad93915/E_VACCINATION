@@ -2,7 +2,8 @@ package com.example.e_vaccination.Utils;
 
 public class AppConstants {
     public  static final String PATIENT="patient";
-    public static final String VACCINATOR="vaccinator";
+    public static final String Worker="worker";
+    public static final String NutritionSUPERVISOR="nutritionsupervisor";
     public static final String  USERS="users";
     //child
 

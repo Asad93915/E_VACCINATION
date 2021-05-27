@@ -9,18 +9,24 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.E_VACCINATION">
-        <activity android:name=".Vacccinator"></activity>
+        <activity android:name=".Logout"></activity>
+        <activity android:name=".Activities.Nutrition_Supervisor" />
+        <activity android:name=".Worker" />
+        <activity android:name=".InfoAboutVaccination" />
+        <activity android:name=".practice" />
+        <activity android:name=".Vacccinator" />
         <activity android:name=".Patient" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Activities.Base_Activity" />
-        <activity android:name=".Signup_Activity" />
-        <activity android:name=".Login_Activity" />
-        <activity android:name=".Splash_Screen">
+        <activity android:name=".Activities.Signup_Activity" />
+        <activity android:name=".Activities.Login_Activity" />
+        <activity android:name=".Activities.Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

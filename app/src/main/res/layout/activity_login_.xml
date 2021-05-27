@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login_Activity">
+    tools:context=".Activities.Login_Activity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,8 +35,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="@dimen/headingSize"
-                android:textColorHint="@color/black"
-                android:textStyle="bold" />
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/password"
@@ -51,8 +50,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/login"
