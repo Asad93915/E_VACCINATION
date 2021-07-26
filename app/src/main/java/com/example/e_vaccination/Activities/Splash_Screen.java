@@ -11,13 +11,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.e_vaccination.InfoAboutVaccination;
+import com.example.e_vaccination.Nutrition_Supervisor;
 import com.example.e_vaccination.Patient;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Vacccinator;
 import com.example.e_vaccination.Worker;
+import com.example.e_vaccination.user_activity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -67,6 +69,7 @@ public class Splash_Screen extends Base_Activity{
         } else {
             new Handler().postDelayed(() -> {
                 startActivity(new Intent(Splash_Screen.this, Login_Activity.class));
+
                 finish();
             }, 3000);
             //       }

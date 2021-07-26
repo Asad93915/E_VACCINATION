@@ -1,10 +1,8 @@
-package com.example.e_vaccination.Activities;
+package com.example.e_vaccination;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import com.example.e_vaccination.R;
 
 public class Nutrition_Supervisor extends AppCompatActivity {
 

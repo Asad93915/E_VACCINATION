@@ -16,11 +16,11 @@
             android:layout_marginTop="30dp"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="124dp"
+                android:layout_width="100dp"
                 android:id="@+id/logoUp"
                 android:layout_gravity="center"
-                android:layout_height="150dp"
-                android:src="@drawable/ev9" />
+                android:layout_height="130dp"
+                android:src="@drawable/icon_loin" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,10 +36,14 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:id="@+id/firstName"
+                android:background="@drawable/border"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:inputType="text"
                 android:hint="Name"
                 android:textColorHint="@color/black"
@@ -52,8 +56,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:inputType="textEmailAddress"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/black"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
                 android:id="@+id/email"
                 android:hint="E-Mail"
                 android:textColorHint="@color/black"
@@ -65,7 +72,11 @@
                 android:layout_marginLeft="20dp"
                 android:inputType="phone"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="@color/black"
+                android:background="@drawable/border"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:id="@+id/phoneNo"
                 android:hint="Phone Number"
                 android:textColorHint="@color/black"
@@ -77,14 +88,17 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:inputType="textPassword"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/black"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
                 android:id="@+id/password"
                 android:hint="Password"
                 android:textColorHint="@color/black"
                 android:textSize="20sp"
                 android:textAllCaps="false"/>
-            <RadioGroup
+            <!--<RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -95,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/vaccinator"
                     android:layout_marginLeft="30dp"
-                    android:text="Worker"
+                    android:text="vaccinator"
                     android:textSize="12sp"
                     android:textAllCaps="false"
                     android:textColorHint="@color/black"
@@ -123,7 +137,7 @@
                     android:textColorHint="@color/black"
                     android:textColor="@color/black"
                     android:buttonTint="@color/black"/>
-            </RadioGroup>
+            </RadioGroup>-->
 
             <Button
                 android:id="@+id/signUp"
@@ -134,7 +148,7 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="#F0B66B"
+                android:backgroundTint="#97B336"
                 android:text="Sign Up"
                 android:textAllCaps="false" />
 

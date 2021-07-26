@@ -41,18 +41,18 @@ public class Signup_Activity extends Base_Activity implements View.OnClickListen
         findViewById(R.id.signUp).setOnClickListener(this);
         findViewById(R.id.alreadyHaveAccount).setOnClickListener(this);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+/*        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.vaccinator) {
-                    userType = AppConstants.Worker;
+                    userType = AppConstants.Vaccinator;
                 } else if(checkedId == R.id.nSupervisor){
                     userType=AppConstants.NutritionSUPERVISOR;
                 } else
                     userType = AppConstants.PATIENT;
 
             }
-        });
+        });*/
 
         findViewById(R.id.signUp).setOnClickListener(new View.OnClickListener() {
             @Override

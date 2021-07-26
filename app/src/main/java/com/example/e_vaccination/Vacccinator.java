@@ -1,4 +1,3 @@
-
 package com.example.e_vaccination;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +9,6 @@ public class Vacccinator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vacccinator);
+        setContentView(R.layout.activity_vacccinator2);
     }
 }

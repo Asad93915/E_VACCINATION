@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#4385A3"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Patient">
@@ -23,16 +24,11 @@
                     android:id="@+id/logoIn"
                     android:layout_width="124dp"
                     android:layout_height="200dp"
-                    android:layout_marginLeft="100dp"
-                    android:src="@drawable/ev9" />
+                    android:layout_marginLeft="130dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bgrng_user" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -40,23 +36,25 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
                     android:id="@+id/addNewChild"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="130dp"
                     android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/black"
-                    android:text="Add New Child"
+                    android:backgroundTint="#3E98C0"
+                    android:hint="Add New Child"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColorHint="@color/white"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="40dp"
+                    android:id="@+id/addChild"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ev6" />
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_aduser" />
             </LinearLayout>
 
             <LinearLayout
@@ -65,30 +63,37 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
                     android:id="@+id/infoAboutVac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/black"
-                    android:text="Info About Vaccination"
+                    android:backgroundTint="#3E98C0"
+                    android:hint="Info About Vaccination"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/viewVacSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/black"
-                    android:text="View Vaccination Schedule"
+                    android:backgroundTint="#3E98C0"
+                    android:hint="View Vaccination Schedule"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/holder"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
             </LinearLayout>
 
         </LinearLayout>

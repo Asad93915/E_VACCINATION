@@ -7,9 +7,21 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.e_vaccination.Patient;
+import androidx.annotation.NonNull;
+
+import com.example.e_vaccination.Nutrition_Supervisor;
 import com.example.e_vaccination.R;
+//import com.example.e_vaccination.Staff.Nutrition_Supervisor;
+import com.example.e_vaccination.Utils.AppConstants;
+//import com.example.e_vaccination.Staff.Vacccinator;
+//import com.example.e_vaccination.Staff.Worker;
+import com.example.e_vaccination.Vacccinator;
+import com.example.e_vaccination.Worker;
+import com.example.e_vaccination.user_activity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login_Activity extends Base_Activity {
     private FirebaseAuth mAuth;
@@ -17,13 +29,7 @@ public class Login_Activity extends Base_Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//
-//        Locale locale = new Locale("en");
-//        Locale.setDefault(locale);
-//        Configuration config = getBaseContext().getResources().getConfiguration();
-//        config.locale = locale;
-//        getBaseContext().getResources().updateConfiguration(config,
-//                getBaseContext().getResources().getDisplayMetrics());
+
 
         setContentView(R.layout.activity_login_);
         ImageView logoIn = findViewById(R.id.logoIn);
@@ -43,8 +49,10 @@ public class Login_Activity extends Base_Activity {
                     mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(Login_Activity.this, task -> {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Login_Activity.this, "login succesfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(Login_Activity.this, Patient.class));
+                                    validateUser(task.getResult().getUser().getUid());
+
+//                                    Toast.makeText(Login_Activity.this, "login succesfully", Toast.LENGTH_SHORT).show();
+//                                    startActivity(new Intent(Login_Activity.this, Patient.class));
                                 } else {
                                     Toast.makeText(Login_Activity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
@@ -66,6 +74,39 @@ public class Login_Activity extends Base_Activity {
                 finish();
 
             }
+        });
+    }
+    private void validateUser(String uid) {
+        getReference(AppConstants.USERS).child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot == null) return;
+                String type = snapshot.child(AppConstants.USER_TYPE).getValue().toString();
+                if (type.equals(AppConstants.Vaccinator)) {
+                    startActivity(new Intent(Login_Activity.this, Vacccinator.class));
+                    Toast.makeText(Login_Activity.this, "Login As a Vaccinator", Toast.LENGTH_SHORT).show();
+                }
+                else if (type.equals(AppConstants.Worker)) {
+                    startActivity(new Intent(Login_Activity.this, Worker.class));
+                    Toast.makeText(Login_Activity.this, "Login As Worker", Toast.LENGTH_SHORT).show();
+                }
+                else if (type.equals(AppConstants.NutritionSUPERVISOR)){
+                    startActivity(new Intent(Login_Activity.this, Nutrition_Supervisor.class));
+                    Toast.makeText(Login_Activity.this, "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    startActivity(new Intent(Login_Activity.this, user_activity.class));
+                    Toast.makeText(Login_Activity.this, "Login As Patient", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
         });
     }
 }

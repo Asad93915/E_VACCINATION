@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#C08B44"
     android:orientation="vertical"
+
     android:layout_height="match_parent"
     tools:context=".InfoAboutVaccination">
     <ScrollView
@@ -11,199 +13,412 @@
         android:layout_height="match_parent">
       <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
           android:orientation="vertical">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:text="Information Vaccination"
+              android:textSize="18sp"
+              android:textColor="@color/white"
+              android:layout_marginLeft="110dp"
+              />
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#8C6F47"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
 
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/bcg"-->
-<!--                  android:text="BCG"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/hepatitsB"-->
-<!--                  android:text="Hepatits_B"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/opv"-->
-<!--                  android:text="OPV"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/rotaVirus"-->
-<!--                  android:text="Rota Virus"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/pcv"-->
-<!--                  android:text="Penta"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--            <ImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_vacInj"/>-->
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/white"
+                      android:text= "یہ ٹیکا بچوں کو ٹی ٹی پی سے بچاو میں مدد دیتا ہے "
+                      />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/white"
+                      android:text="ٹی بی کا مرض پھیپھڑوں کو نقصان پہنچاتا ہے"/>
+              </LinearLayout>
 
-<!--        </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/ipv"-->
-<!--                  android:text="IPV"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/tcv"-->
-<!--                  android:text="TCV"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/measlesRubella"-->
-<!--                  android:text="Measles Rubella"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
-<!--          <LinearLayout-->
-<!--              android:layout_width="wrap_content"-->
-<!--              android:layout_height="wrap_content"-->
-<!--              android:orientation="horizontal">-->
-<!--              <TextView-->
-<!--                  android:layout_width="match_parent"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:id="@+id/Td"-->
-<!--                  android:text="TT/Td"-->
-<!--                  android:textAllCaps="false"-->
-<!--                  android:textSize="20dp"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_marginLeft="20dp"-->
-<!--                  android:layout_marginRight="20dp"-->
-<!--                  android:textColor="@color/black"/>-->
-<!--              <ImageView-->
-<!--                  android:layout_width="wrap_content"-->
-<!--                  android:layout_marginTop="10dp"-->
-<!--                  android:layout_height="wrap_content"-->
-<!--                  android:src="@drawable/ic_vacInj"/>-->
-<!--          </LinearLayout>-->
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="BCG"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#C24747"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/white"
+                      android:text= "یہ ٹیکا کالے یرکان سے بچاتا ہے "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text=""/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="Hepatits(B)"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#4385A3"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text= "یہ قطرے پولیو سے بچاؤ میں مدد کرتے ہیں. "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text="پولیو کا مرض دماغ کی نسوں کو نقصان پہنچاتا ہے."/>
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text= "جس کیوجہ سے جسمانی کمزوری بھی ہو سکتی ہے."/>
+                  />
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="OPV"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_drop"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#D1B762"
+
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="45dp"
+                      android:textColor="@color/white"
+                      android:text= "ویکسین شدید روٹا وائرس بیماری (بخار ، الٹی ، اسہال ، اور طرز عمل میں تبدیلی) سے محفوظ رہے گی ، "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="45dp"
+                      android:textColor="@color/white"
+                      android:text="ویکسین شدید روٹا وائرس بیماری (بخار ، الٹی ، اسہال ، اور طرز عمل میں تبدیلی) سے محفوظ رہے گی ،"/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="Rota Virus"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="17dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_drop"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#307C57"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text= "یہ ٹیکا نمونیہ سے لڑنے میں مدد کرتا ہے. "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text="نمونیہ کا مرض پھیپھڑوں کو نقصان پہنچاتا ہے"/>
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text="جس سے سانس لینے میں مشکل ہوتی ہے."/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="PCV"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#4A3F63"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="40dp"
+                      android:textColor="@color/white"
+                      android:text= " یہ پینٹا کا ٹیکا پانچ بیماریوں سے فراہم کرتا ہے"/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="50dp"
+                      android:textColor="@color/white"
+                      android:text=" جن میں کالی کھانسی،کالا یرقان،فناک،تشنج،انفلوئنزا ٹائپ بی (ڈی ٹی پی-ہیپ بی-حب)۔"/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="Penta"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#A66E5C"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="45dp"
+                      android:textColor="@color/black"
+                      android:text= "یہ ٹیکا ٹائیفائیڈ بخار سے بچاؤ میں مدد دیتا ہے "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="45dp"
+                      android:textColor="@color/black"
+                      android:text="مرض کی صورت میں تیز بخار ہوتا ہے"/>
+
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="TCV"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#4385A3"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="25dp"
+                      android:textColor="@color/black"
+                      android:text= "یہ ٹیکہ خسرہ اور روبیلا سے بچاتا ہے "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="25dp"
+                      android:textColor="@color/black"
+                      android:text="خسرے سے نمونیہ انفیکشن اور موت ہونے کا خطرہ رہتا ہے"/>
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="50dp"
+                      android:textColor="@color/black"
+                      android:text="حمل کے دوران روبیلا انفیکشن سے بچے کی جان کو خطرہ ہو سکتا ہے"/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="Measles Rubela"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="12dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text= "یہ ٹیکا کالے یرکان سے بچاتا ہے "/>
+                  />
+                  <TextView
+                      android:layout_width="300dp"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:text=""/>
+              </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_width="110dp"
+                  android:layout_height="90dp"
+                  android:orientation="vertical">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/black"
+                      android:text="TT/TD"
+                      android:layout_marginLeft="10dp"
+                      android:textStyle="bold"
+                      android:textSize="18dp"/>
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="70dp"
+                      android:src="@drawable/icon_inj"/>
+              </LinearLayout>
+          </LinearLayout>
+
+
+
+
+
+
+
+
 
 
 

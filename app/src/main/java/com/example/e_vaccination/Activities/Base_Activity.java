@@ -1,6 +1,9 @@
 package com.example.e_vaccination.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +45,13 @@ public class  Base_Activity extends AppCompatActivity {
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT);
         Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
 
+    }
+    public void loadFragment(Fragment fragment) {
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction=manager.beginTransaction();
+        transaction.replace(R.id.container,fragment);
+        transaction.commit();
     }
 
 
