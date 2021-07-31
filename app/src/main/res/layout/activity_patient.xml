@@ -22,9 +22,8 @@
 
                 <ImageView
                     android:id="@+id/logoIn"
-                    android:layout_width="124dp"
-                    android:layout_height="200dp"
-                    android:layout_marginLeft="130dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
                     android:layout_gravity="center"
                     android:src="@drawable/bgrng_user" />
             </LinearLayout>

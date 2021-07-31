@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name" translatable="false">E_VACCINATION</string>
     <string name="email">Email</string>
+
+    <string name="open" translatable="false">open</string>
+    <string name="close" translatable="false">close</string>
+
     <string name="password">Password</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
 

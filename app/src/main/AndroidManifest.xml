@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_VACCINATION"
         android:usesCleartextTraffic="true">
-        <activity android:name=".testing"></activity>
+        <activity android:name=".navigation"></activity>
+        <activity android:name=".testing" />
         <activity android:name=".Schedule" />
         <activity android:name=".AddUser" />
         <activity android:name=".Nutrition_Supervisor" />
@@ -23,7 +24,6 @@
         <activity android:name=".Vacccinator" />
         <activity android:name=".Polio" />
         <activity android:name=".user_activity" />
-        <activity android:name=".Logout" />
         <activity android:name=".Staff.Nutrition_Supervisor" />
         <activity android:name=".Staff.Worker" />
         <activity android:name=".InfoAboutVaccination" />

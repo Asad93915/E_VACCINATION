@@ -2,6 +2,7 @@ package com.example.e_vaccination.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -9,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.e_vaccination.AddUser;
 import com.example.e_vaccination.Nutrition_Supervisor;
+import com.example.e_vaccination.Patient;
 import com.example.e_vaccination.R;
 //import com.example.e_vaccination.Staff.Nutrition_Supervisor;
 import com.example.e_vaccination.Utils.AppConstants;
@@ -17,6 +20,7 @@ import com.example.e_vaccination.Utils.AppConstants;
 //import com.example.e_vaccination.Staff.Worker;
 import com.example.e_vaccination.Vacccinator;
 import com.example.e_vaccination.Worker;
+import com.example.e_vaccination.navigation;
 import com.example.e_vaccination.user_activity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 public class Login_Activity extends Base_Activity {
+    public static Object MyPREFERENCES;
     private FirebaseAuth mAuth;
 
     @Override
@@ -31,8 +36,10 @@ public class Login_Activity extends Base_Activity {
         super.onCreate(savedInstanceState);
 
 
+
         setContentView(R.layout.activity_login_);
         ImageView logoIn = findViewById(R.id.logoIn);
+
         EditText email = findViewById(R.id.email);
         EditText password = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
@@ -51,8 +58,8 @@ public class Login_Activity extends Base_Activity {
                                 if (task.isSuccessful()) {
                                     validateUser(task.getResult().getUser().getUid());
 
-//                                    Toast.makeText(Login_Activity.this, "login succesfully", Toast.LENGTH_SHORT).show();
-//                                    startActivity(new Intent(Login_Activity.this, Patient.class));
+                                   Toast.makeText(Login_Activity.this, "login succesfully", Toast.LENGTH_SHORT).show();
+       //                              startActivity(new Intent(Login_Activity.this, Patient.class));
                                 } else {
                                     Toast.makeText(Login_Activity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
@@ -95,7 +102,7 @@ public class Login_Activity extends Base_Activity {
                     Toast.makeText(Login_Activity.this, "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    startActivity(new Intent(Login_Activity.this, user_activity.class));
+                    startActivity(new Intent(Login_Activity.this, AddUser.class));
                     Toast.makeText(Login_Activity.this, "Login As Patient", Toast.LENGTH_SHORT).show();
                 }
 

@@ -76,8 +76,8 @@ public class Splash_Screen extends Base_Activity{
 
             // zoomIn(view);
             //zoomOut(view);
-//            clockVise(view);
-//            blink(view);
+            clockVise(view);
+            blink(view);
 
 
         }
@@ -94,20 +94,20 @@ public class Splash_Screen extends Base_Activity{
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
         eVac.startAnimation(animation);
     }
-//
-//    public void zoomIn(View view) {
-//        logoAnim = findViewById(R.id.logoAnim);
-//        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoomin);
-//        logoAnim.startAnimation(animation1);
-//
-//    }
 
-//    public void zoomOut(View view) {
-//        logoAnim = findViewById(R.id.logoAnim);
-//        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoomout);
-//        logoAnim.startAnimation(animation1);
-//
-//    }
+    public void zoomIn(View view) {
+        logoAnim = findViewById(R.id.logoAnim);
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoomin);
+        logoAnim.startAnimation(animation1);
+
+    }
+
+    public void zoomOut(View view) {
+        logoAnim = findViewById(R.id.logoAnim);
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoomout);
+        logoAnim.startAnimation(animation1);
+
+    }
 
         private void validateUser (String uid){
             getReference(AppConstants.USERS).child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -116,11 +116,15 @@ public class Splash_Screen extends Base_Activity{
                     if (snapshot == null) return;
                     String type = snapshot.child(AppConstants.USER_TYPE).getValue().toString();
                     if (type.equals(AppConstants.PATIENT))
-                        newActivity(Patient.class); // todo customer activity
+                        newActivity(Patient.class);
                     else if (type.equals(AppConstants.Worker))
                         newActivity(Worker.class);
                     else if (type.equals(AppConstants.NutritionSUPERVISOR))
                         newActivity(Nutrition_Supervisor.class);
+                    else
+                        newActivity(Vacccinator.class);
+
+                    finish();
                 }
 
                 @Override

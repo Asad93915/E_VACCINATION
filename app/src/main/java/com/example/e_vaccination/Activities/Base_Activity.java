@@ -24,8 +24,7 @@ public class  Base_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_);
-        mAuth=FirebaseAuth.getInstance();
-
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -59,7 +58,7 @@ public class  Base_Activity extends AppCompatActivity {
 
     public String getText(EditText editText)
     {
-        return  editText.getText().toString();
+        return  editText.getText().toString().trim() ;
     }
 
 }
