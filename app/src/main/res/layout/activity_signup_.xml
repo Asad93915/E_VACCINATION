@@ -20,7 +20,7 @@
                 android:id="@+id/logoUp"
                 android:layout_gravity="center"
                 android:layout_height="130dp"
-                android:src="@drawable/icon_loin" />
+                android:src="@drawable/logo" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

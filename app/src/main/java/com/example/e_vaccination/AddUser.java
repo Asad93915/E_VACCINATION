@@ -1,10 +1,12 @@
 package com.example.e_vaccination;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,30 +15,44 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.e_vaccination.Activities.Base_Activity;
+import com.example.e_vaccination.Activities.Login_Activity;
+import com.example.e_vaccination.Activities.Signup_Activity;
+import com.example.e_vaccination.Utils.AppConstants;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class AddUser extends Base_Activity
 {
-    private StorageReference storageRef;
+
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST=11;
     EditText name,birthDate,city,uc,address;
-    ImageView userImage,chooseImage;
-    Button uploadPic,createChild;
+    ImageView showimage,chooseImage;
+    Button createChild;
+    Person person;
+    private DatabaseReference reference;
+    private StorageReference storageref = FirebaseStorage.getInstance().getReference();
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference("Image");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +62,10 @@ public class AddUser extends Base_Activity
         birthDate = findViewById(R.id.dob);
         city = findViewById(R.id.city);
         uc = findViewById(R.id.uc);
-        address = findViewById(R.id.address);
         chooseImage=findViewById(R.id.chooseImage);
-        uploadPic=findViewById(R.id.uploadPic);
+        showimage=findViewById(R.id.showimage);
         createChild=findViewById(R.id.createChild);
-        storageRef= FirebaseStorage.getInstance().getReference("uploads/5645464356.jpg");
+        reference=FirebaseDatabase.getInstance().getReference().child("person");
 
         createChild.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,16 +80,15 @@ public class AddUser extends Base_Activity
                 {
                     city.setError("City Required!");
                 }
-                else if (getText(uc).isEmpty())
-                {
+                else  if (getText(uc).isEmpty())
                     uc.setError("Unioun Council Required!");
-                }
-                else if(getText(address).isEmpty())
-                {
-                    address.setError("Address Required");
-                }
-                else if  (chooseImage.getDrawable() == null){
-                    error(null,"Image View Require");
+//                else if  (chooseImage.getDrawable() == null){
+//                    error(null,"Image Require");
+//                }
+                else {
+
+                    addUserDetails();
+
                 }
 
 
@@ -84,150 +98,74 @@ public class AddUser extends Base_Activity
         chooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
-                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},5555);
-                    selectImage();
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 10);
                 }
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, 11);
 
             }
         });
-        uploadPic.setOnClickListener(new View.OnClickListener() {
+
+
+    }
+    public void addUserDetails(){
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put(AppConstants.FIRSTNAME, getText(name));
+        hashMap.put(AppConstants.UC,Integer.parseInt(uc.getText().toString()));
+        hashMap.put(AppConstants.CITY,getText(city));
+        hashMap.put(AppConstants.DOB,Integer.parseInt(uc.getText().toString()));
+
+        getReference(AppConstants.USERS).child(getAuth().getCurrentUser().getUid()).updateChildren(hashMap);
+
+
+
+    }
+    private void uploadToFirebase(Uri uri) {
+        StorageReference fileref = storageref.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        fileref.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onClick(View v) {
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Model model = new Model(uri.toString());
+                        String modelid = root.push().getKey();
+                        root.child(modelid).setValue(model);
+                        Toast.makeText(AddUser.this, "upload succesfully", Toast.LENGTH_SHORT).show();
+                        //   progressBar.setVisibility(View.INVISIBLE);
+                    }
+                });
 
-                uploadImage();
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                // progressBar.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                //   progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(AddUser.this, "uploading Failed", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-    }
-    private void selectImage()
-    {
-
-        // Defining Implicit Intent to mobile gallery
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(
-                Intent.createChooser(
-                        intent,
-                        "Select Image from here..."),
-                PICK_IMAGE_REQUEST);
     }
 
-    // Override onActivityResult method
+    private  String getFileExtension(Uri muri){
+        ContentResolver cr=getContentResolver();
+        MimeTypeMap mime=MimeTypeMap.getSingleton();
+        return  mime.getExtensionFromMimeType(cr.getType(muri));
+    }
+
     @Override
-    protected void onActivityResult(int requestCode,
-                                    int resultCode,
-                                    Intent data)
-    {
-
-        super.onActivityResult(requestCode,
-                resultCode,
-                data);
-        // checking request code and result code
-        // if request code is PICK_IMAGE_REQUEST and
-        // resultCode is RESULT_OK
-        // then set image in the image view
-        if (requestCode == PICK_IMAGE_REQUEST
-                && resultCode == RESULT_OK
-                && data != null
-                && data.getData() != null) {
-
-            // Get the Uri of data
-            filePath = data.getData();
-            try {
-
-                // Setting image on image view using Bitmap
-                Bitmap bitmap = MediaStore
-                        .Images
-                        .Media
-                        .getBitmap(
-                                getContentResolver(),
-                                filePath);
-                chooseImage.setImageBitmap(bitmap);
-            }
-
-            catch (IOException e) {
-                // Log the exception
-                e.printStackTrace();
-            }
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==11  && resultCode==RESULT_OK && data!=null){
+            filePath=data.getData();
+            showimage.setImageURI(filePath);
         }
     }
-
-    // UploadImage method
-    private void uploadImage()
-    {
-        if (filePath != null) {
-
-            // Code for showing progressDialog while uploading
-            ProgressDialog progressDialog
-                    = new ProgressDialog(this);
-            progressDialog.setTitle("Uploading...");
-            progressDialog.show();
-
-
-            // Defining the child of storageReference
-            StorageReference ref
-                    =storageRef
-                    .child(
-                            "images/"
-                                    + UUID.randomUUID().toString());
-
-            // adding listeners on upload
-            // or failure of image
-            ref.putFile(filePath)
-                    .addOnSuccessListener(
-                            new OnSuccessListener<UploadTask.TaskSnapshot>() {
-
-                                @Override
-                                public void onSuccess(
-                                        UploadTask.TaskSnapshot taskSnapshot)
-                                {
-
-                                    // Image uploaded successfully
-                                    // Dismiss dialog
-                                    progressDialog.dismiss();
-                                    Toast.makeText(AddUser.this,
-                                                    "Image Uploaded!!",
-                                                    Toast.LENGTH_SHORT)
-                                            .show();
-                                }
-                            })
-
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e)
-                        {
-
-                            // Error, Image not uploaded
-                            progressDialog.dismiss();
-                            Toast
-                                    .makeText(AddUser.this,
-                                            "Failed " + e.getMessage(),
-                                            Toast.LENGTH_SHORT)
-                                    .show();
-                        }
-                    })  .addOnProgressListener(
-                    new OnProgressListener<UploadTask.TaskSnapshot>() {
-
-                        // Progress Listener for loading
-                        // percentage on the dialog box
-                        @Override
-                        public void onProgress(
-                                UploadTask.TaskSnapshot taskSnapshot)
-                        {
-                            double progress
-                                    = (100.0
-                                    * taskSnapshot.getBytesTransferred()
-                                    / taskSnapshot.getTotalByteCount());
-                            progressDialog.setMessage(
-                                    "Uploaded "
-                                            + (int)progress + "%");
-                        }
-                    });
-        }
-    }
-
 }

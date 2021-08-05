@@ -20,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+import static com.example.e_vaccination.Utils.AppConstants.PATIENT;
+
 public class Signup_Activity extends Base_Activity implements View.OnClickListener {
     EditText name,phoneNo,email,password;
     String userType="";
@@ -30,6 +32,8 @@ public class Signup_Activity extends Base_Activity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_);
+
+
         database = FirebaseDatabase.getInstance();
         ImageView logoUp = findViewById(R.id.logoUp);
         name = findViewById(R.id.firstName);
@@ -37,7 +41,6 @@ public class Signup_Activity extends Base_Activity implements View.OnClickListen
         phoneNo = findViewById(R.id.phoneNo);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        RadioGroup radioGroup = findViewById(R.id.radioGroup);
         findViewById(R.id.signUp).setOnClickListener(this);
         findViewById(R.id.alreadyHaveAccount).setOnClickListener(this);
 
@@ -99,7 +102,7 @@ public class Signup_Activity extends Base_Activity implements View.OnClickListen
                 else if (password.getText().toString().isEmpty())
                     password.setError("Enter a Password");
             else if (userType.isEmpty())
-                Toast.makeText(getApplicationContext(), "select user type", Toast.LENGTH_SHORT).show();
+               userType=PATIENT;
              else {
                 getAuth().createUserWithEmailAndPassword(getText(email), getText(password))
                         .addOnCompleteListener(task -> {
@@ -131,7 +134,6 @@ public void addUserDetails(String uid){
                 startActivity(new Intent(Signup_Activity.this,Login_Activity.class));
                 finish();
             }
-
         }
     });
 

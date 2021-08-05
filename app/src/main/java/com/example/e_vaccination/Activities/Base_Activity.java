@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class  Base_Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-
+    private String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,13 +52,19 @@ public class  Base_Activity extends AppCompatActivity {
         transaction.replace(R.id.container,fragment);
         transaction.commit();
     }
-
+     public String getId()
+     {
+         return id;
+     }
 
 
 
     public String getText(EditText editText)
     {
         return  editText.getText().toString().trim() ;
+    }
+    public boolean isNewUser(){
+        return getAuth().getCurrentUser()==null;
     }
 
 }

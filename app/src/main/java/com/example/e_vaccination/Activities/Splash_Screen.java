@@ -35,52 +35,61 @@ public class Splash_Screen extends Base_Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen);
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            FirebaseDatabase.getInstance().getReference().child("users").child(
-                    FirebaseAuth.getInstance().getUid()
-            ).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                   Toast.makeText(Splash_Screen.this, "" + snapshot.child("email").getValue().toString(), Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                    if (snapshot == null) return;
-                            String type = snapshot.child(AppConstants.USER_TYPE).getValue().toString();
-                            if (type.equals(AppConstants.PATIENT))
-                                startActivity(new Intent(Splash_Screen.this, Patient.class));
-                            else if (type.equals(AppConstants.Worker))
-                                startActivity(new Intent(Splash_Screen.this, Worker.class));
-                            else
-                                startActivity(new Intent(Splash_Screen.this, Nutrition_Supervisor.class));
-                            finish();
-                        }
-                    }, 3000);
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    System.out.println("");
-                }
-            });
-            clockVise(view);
-            blink(view);
-        } else {
+        if (isNewUser()) {
             new Handler().postDelayed(() -> {
                 startActivity(new Intent(Splash_Screen.this, Login_Activity.class));
-
                 finish();
             }, 3000);
-            //       }
-
-            // zoomIn(view);
-            //zoomOut(view);
-            clockVise(view);
-            blink(view);
-
-
+        } else {
+            validateUser(getAuth().getCurrentUser().getUid());
         }
+//
+//        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//            FirebaseDatabase.getInstance().getReference().child("users").child(
+//                    FirebaseAuth.getInstance().getUid()
+//            ).addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                   Toast.makeText(Splash_Screen.this, "" + snapshot.child("email").getValue().toString(), Toast.LENGTH_SHORT).show();
+//                    new Handler().postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                    if (snapshot == null) return;
+//                            String type = snapshot.child(AppConstants.USER_TYPE).getValue().toString();
+//                            if (type.equals(AppConstants.PATIENT))
+//                                startActivity(new Intent(Splash_Screen.this, Patient.class));
+//                            else if (type.equals(AppConstants.Worker))
+//                                startActivity(new Intent(Splash_Screen.this, Worker.class));
+//                            else
+//                                startActivity(new Intent(Splash_Screen.this, Nutrition_Supervisor.class));
+//                            finish();
+//                        }
+//                    }, 3000);
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//                    System.out.println("");
+//                }
+//            });
+//            clockVise(view);
+//            blink(view);
+//        } else {
+//            new Handler().postDelayed(() -> {
+//                startActivity(new Intent(Splash_Screen.this, Login_Activity.class));
+//
+//                finish();
+//            }, 3000);
+//            //       }
+//
+//            // zoomIn(view);
+//            //zoomOut(view);
+//            clockVise(view);
+//            blink(view);
+//
+//
+//        }
     }
 
     public void clockVise(View view) {

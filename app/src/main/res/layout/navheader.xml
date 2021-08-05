@@ -11,7 +11,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/icon_loin" />
+            android:background="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
