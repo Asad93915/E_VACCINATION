@@ -1,103 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Activities.Signup_Activity">
+    android:orientation="vertical"
+    tools:context=".Activities.SignupActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="100dp"
                 android:id="@+id/logoUp"
-                android:layout_gravity="center"
+                android:layout_width="100dp"
                 android:layout_height="130dp"
+                android:layout_gravity="center"
                 android:src="@drawable/logo" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:text="Create Your Account"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_gravity="center"
-                android:gravity="center"/>
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Create Your Account"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="20dp"
                 android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
+                android:hint="Name"
+                android:inputType="text"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:inputType="text"
-                android:hint="Name"
+                android:textAllCaps="false"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
+                android:textSize="@dimen/normal_text_size" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/border"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
                 android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
                 android:hint="E-Mail"
-                android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:inputType="phone"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border"
-                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/normal_text_size" />
+
+            <EditText
                 android:id="@+id/phoneNo"
-                android:hint="Phone Number"
-                android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:inputType="textPassword"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
+                android:hint="Phone Number"
+                android:inputType="phone"
                 android:paddingLeft="10dp"
-                android:id="@+id/password"
-                android:hint="Password"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
+                android:textSize="@dimen/normal_text_size" />
+
+            <EditText
+                android:id="@+id/userAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
+                android:hint="Address"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/normal_text_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="2">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/districtSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:hint="Select District"
+                    android:textColor="@android:color/black" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/ucSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:hint="Select UC"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/normal_text_size" />
             <!--<RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,30 +190,30 @@
                     android:buttonTint="@color/black"/>
             </RadioGroup>-->
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="#97B336"
+                android:background="@drawable/button_bg"
                 android:text="Sign Up"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_text_size" />
 
 
             <TextView
                 android:id="@+id/alreadyHaveAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:textSize="16dp"
-                android:layout_gravity="center"
                 android:text="Already have account signIn ?"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/normal_text_size" />
 
         </LinearLayout>
     </ScrollView>

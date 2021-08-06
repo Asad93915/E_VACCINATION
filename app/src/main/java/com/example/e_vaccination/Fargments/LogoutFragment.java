@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.e_vaccination.Activities.Login_Activity;
+import com.example.e_vaccination.Activities.LoginActivity;
 import com.example.e_vaccination.R;
 
 
@@ -26,11 +26,11 @@ public class LogoutFragment extends Fragment {
         view.findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logoutintent = new Intent(getContext(), Login_Activity.class);
+                Intent logoutintent = new Intent(getContext(), LoginActivity.class);
                 startActivity(logoutintent);
                 SharedPreferences loginSharedPreferences;
                 loginSharedPreferences = getActivity().getSharedPreferences(
-                        (String) Login_Activity.MyPREFERENCES, Context.MODE_PRIVATE);
+                        (String) LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
                 Toast.makeText(getActivity(), "LogOut", Toast.LENGTH_SHORT).show();
                 SharedPreferences.Editor editor = loginSharedPreferences.edit();
                 editor.putString("UniqueId", "");

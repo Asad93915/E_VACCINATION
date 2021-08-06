@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_VACCINATION"
         android:usesCleartextTraffic="true">
-        <activity android:name=".navigation"></activity>
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.E_VACCINATION.NoActionBar"></activity>
         <activity android:name=".testing" />
         <activity android:name=".Schedule" />
         <activity android:name=".AddUser" />
@@ -24,17 +27,14 @@
         <activity android:name=".Vacccinator" />
         <activity android:name=".Polio" />
         <activity android:name=".user_activity" />
-        <activity android:name=".Staff.Nutrition_Supervisor" />
-        <activity android:name=".Staff.Worker" />
         <activity android:name=".InfoAboutVaccination" />
         <activity android:name=".practice" />
-        <activity android:name=".Staff.Vacccinator" />
         <activity android:name=".Patient" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Activities.Base_Activity" />
-        <activity android:name=".Activities.Signup_Activity" />
-        <activity android:name=".Activities.Login_Activity" />
-        <activity android:name=".Activities.Splash_Screen">
+        <activity android:name=".Activities.BaseActivity" />
+        <activity android:name=".Activities.SignupActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,46 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fargments.kmaaha_datails">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="Select Street"
-            android:textStyle="normal"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:id="@+id/streetno"/>
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            android:id="@+id/tvstreetno"
-            android:text="street_no"/>
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <ListView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/houselist"/>
-    </LinearLayout>
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/streetno"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Street"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tvstreetno"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="street_no"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/houselist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </LinearLayout>
 

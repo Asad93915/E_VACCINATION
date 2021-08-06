@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.Login_Activity">
+    tools:context=".Activities.LoginActivity">
 
 
     <ScrollView
@@ -24,13 +24,14 @@
                 android:layout_width="124dp"
                 android:layout_height="200dp"
                 android:src="@drawable/logo" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="18dp"
+                android:text="E_VACCINATION"
                 android:textColor="@color/green"
-                android:text="E_VACCINATION"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/email"
@@ -46,7 +47,7 @@
                 android:paddingBottom="10dp"
                 android:textAllCaps="false"
                 android:textColorHint="@color/black"
-                android:textSize="20sp" />
+                android:textSize="@dimen/normal_text_size" />
 
 
             <EditText
@@ -65,19 +66,20 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:textSize="20sp" />
+                android:textSize="@dimen/normal_text_size" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="#97B336"
+                android:background="@drawable/button_bg"
                 android:text="Login"
                 android:textAllCaps="false"
-                android:textSize="20dp" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_text_size" />
 
 
             <LinearLayout
@@ -91,9 +93,8 @@
                     android:id="@+id/forgetPassword"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="220dp"
-                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="5dp"
                     android:text="Forget_Password?"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
@@ -117,7 +118,7 @@
                     android:text="Don't have account signUp ?"
                     android:textColor="@android:color/black"
                     android:textColorHint="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/normal_text_size"
                     android:textStyle="bold" />
             </LinearLayout>
 

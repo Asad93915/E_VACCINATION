@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class  Base_Activity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String id;
     @Override
@@ -29,7 +29,6 @@ public class  Base_Activity extends AppCompatActivity {
 
 
     public FirebaseAuth getAuth() {
-
         return mAuth;
     }
     public DatabaseReference getReference(String child)
