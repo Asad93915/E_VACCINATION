@@ -19,11 +19,11 @@ public class PatientHomeFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_patient_home, container, false);
 
         view.findViewById(R.id.actionAddNewChild).setOnClickListener(v -> {
-           open(new AddChildFragment());
+            open(new AddChildFragment());
         });
 
         view.findViewById(R.id.actionViewChild).setOnClickListener(v -> {
-
+            open(new ViewChildernFragment());
         });
 
         view.findViewById(R.id.actionVaccinationSchedule).setOnClickListener(v -> {

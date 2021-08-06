@@ -7,6 +7,10 @@ public class Child {
     private String key;
     private String gender;
 
+    public Child(){
+
+    }
+
     public Child(String name, String dob, String image, String key, String gender) {
         this.name = name;
         this.dob = dob;
