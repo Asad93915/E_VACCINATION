@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.e_vaccination.AddUser;
+import com.example.e_vaccination.Fargments.AddChildFragment;
 import com.example.e_vaccination.Nutrition_Supervisor;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppUtils;
@@ -110,7 +110,7 @@ public class LoginActivity extends BaseActivity {
                                 Toast.makeText(LoginActivity.this, "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
                                 break;
                             default:
-                                startActivity(new Intent(LoginActivity.this, AddUser.class));
+                                startActivity(new Intent(LoginActivity.this, AddChildFragment.class));
                                 Toast.makeText(LoginActivity.this, "Login As Patient", Toast.LENGTH_SHORT).show();
                                 break;
                         }

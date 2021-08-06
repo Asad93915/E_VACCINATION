@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.e_vaccination.AddUser;
+import com.example.e_vaccination.Fargments.AddChildFragment;
 import com.example.e_vaccination.Nutrition_Supervisor;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
@@ -75,7 +75,7 @@ public class SplashActivity extends BaseActivity {
                                     Toast.makeText(view.getContext(), "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
                                     break;
                                 default:
-                                    startActivity(new Intent(view.getContext(), AddUser.class));
+                                    startActivity(new Intent(view.getContext(), AddChildFragment.class));
                                     Toast.makeText(view.getContext(), "Login As Patient", Toast.LENGTH_SHORT).show();
                                     break;
                             }

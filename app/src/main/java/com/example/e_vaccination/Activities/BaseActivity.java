@@ -48,7 +48,7 @@ public class BaseActivity extends AppCompatActivity {
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction=manager.beginTransaction();
-        transaction.replace(R.id.container,fragment);
+        transaction.replace(R.id.fragmentContainer,fragment);
         transaction.commit();
     }
      public String getId()

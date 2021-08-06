@@ -26,5 +26,7 @@ public class AppConstants {
     public static final String ADDRESS="address";
     public static final String DISTRICT = "district";
 
+    public static final String Childerns = "Childerns";
+
     // public AppConstants()
 }

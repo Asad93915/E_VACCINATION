@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.e_vaccination.Activities.BaseActivity;
+import com.example.e_vaccination.Fargments.PatientHomeFragment;
 
 public class user_activity extends BaseActivity {
 
@@ -26,7 +27,7 @@ public class user_activity extends BaseActivity {
         vaccintion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(user_activity.this,Patient.class));
+                startActivity(new Intent(user_activity.this, PatientHomeFragment.class));
             }
         });
     }

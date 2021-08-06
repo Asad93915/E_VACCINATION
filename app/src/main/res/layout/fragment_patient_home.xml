@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Patient">
+    tools:context=".Fargments.PatientHomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,103 +15,97 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/logoIn"
-                    android:layout_width="match_parent"
-                    android:layout_height="500dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/polio_add" />
-            </LinearLayout>
-
+            <ImageView
+                android:id="@+id/logoIn"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/polio_add" />
 
             <LinearLayout
+                android:id="@+id/actionAddNewChild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/addChild"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/ic_baseline_person_add_alt_1_24"/>
+                    android:background="@drawable/ic_baseline_person_add_alt_1_24" />
 
                 <Button
-                    android:id="@+id/addNewChild"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
                     android:backgroundTint="#97B336"
                     android:hint="Add New Child"
                     android:textAllCaps="false"
-                    android:textColorHint="@color/white"
-                    android:textSize="16sp" />
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/actionViewChild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/ic_baseline_details_24"/>
+                    android:background="@drawable/ic_baseline_details_24" />
+
                 <Button
                     android:id="@+id/infoAboutVac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
                     android:backgroundTint="#97B336"
-                    android:hint="Info About Vaccination"
+                    android:hint="View Child's"
                     android:textAllCaps="false"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/actionVaccinationSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/ic_baseline_calendar_today_24"/>
+                    android:background="@drawable/ic_baseline_calendar_today_24" />
 
                 <Button
                     android:id="@+id/viewVacSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
                     android:backgroundTint="#97B336"
                     android:hint="View Vaccination Schedule"
                     android:textAllCaps="false"
                     android:textColorHint="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:id="@+id/holder"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

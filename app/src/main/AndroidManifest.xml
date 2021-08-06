@@ -21,7 +21,7 @@
             android:theme="@style/Theme.E_VACCINATION.NoActionBar"></activity>
         <activity android:name=".testing" />
         <activity android:name=".Schedule" />
-        <activity android:name=".AddUser" />
+        <activity android:name=".Fargments.AddChildFragment" />
         <activity android:name=".Nutrition_Supervisor" />
         <activity android:name=".Worker" />
         <activity android:name=".Vacccinator" />
@@ -29,7 +29,7 @@
         <activity android:name=".user_activity" />
         <activity android:name=".InfoAboutVaccination" />
         <activity android:name=".practice" />
-        <activity android:name=".Patient" />
+        <activity android:name=".Fargments.PatientHomeFragment" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Activities.BaseActivity" />
         <activity android:name=".Activities.SignupActivity" />

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Fargments.AddChildFragment">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/childernImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profile_picture" />
+
+            <ImageView
+                android:id="@+id/actionPickImage"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/ic_camera" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/childName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border"
+            android:hint="Name"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textAllCaps="false"
+            android:textColorHint="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/childDOB"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border"
+            android:hint="Date of birth"
+            android:paddingStart="10dp"
+            android:textAllCaps="false"
+            android:textColorHint="@color/black"
+            android:textSize="16sp" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:layout_width="wrap_content"
+            android:hint="Select Gender"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/genderSelection"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content">
+        </com.jaredrummler.materialspinner.MaterialSpinner>
+
+        <Button
+            android:layout_width="match_parent"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginEnd="30dp"
+            android:text="Add Child"
+            android:id="@+id/actionAddChild"
+            android:layout_height="wrap_content">
+        </Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>
