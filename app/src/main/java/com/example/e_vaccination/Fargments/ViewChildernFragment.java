@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
+import com.example.e_vaccination.Utils.Global;
 import com.example.e_vaccination.adapters.ChildernsViewAdapter;
 import com.example.e_vaccination.models.Child;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,7 +39,10 @@ public class ViewChildernFragment extends BaseFragment {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mAdapter = new ChildernsViewAdapter(childList);
+        mAdapter = new ChildernsViewAdapter(childList, position -> {
+            Global.selectedChildern = childList.get(position);
+            open(new VaccinationFragment());
+        });
 
         mRecyclerView.setAdapter(mAdapter);
 

@@ -26,9 +26,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChildernsViewAdapter extends RecyclerView.Adapter<ChildernsViewAdapter.ViewHolder> {
     private final List<Child> childers;
+    private IItemClickListener listener;
 
-    public ChildernsViewAdapter(List<Child> children) {
+    public ChildernsViewAdapter(List<Child> children, IItemClickListener listener) {
         this.childers = children;
+        this.listener = listener;
     }
 
 
@@ -48,6 +50,7 @@ public class ChildernsViewAdapter extends RecyclerView.Adapter<ChildernsViewAdap
 
         holder.itemView.setOnClickListener(v -> {
 //            deleteCategory(holder.itemView.getContext(), item.getKey());
+            listener.onClick(position);
         });
 
         Glide.with(holder.itemView.getContext())
@@ -99,6 +102,10 @@ public class ChildernsViewAdapter extends RecyclerView.Adapter<ChildernsViewAdap
             mImage = itemView.findViewById(R.id.listview_image);
             mDOB = itemView.findViewById(R.id.list_item_dob);
         }
+    }
+
+    public interface IItemClickListener {
+        void onClick(int position);
     }
 
 }

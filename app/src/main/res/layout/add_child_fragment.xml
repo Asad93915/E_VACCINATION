@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".Fargments.AddChildFragment">
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,27 +71,25 @@
             android:textSize="16sp" />
 
         <com.jaredrummler.materialspinner.MaterialSpinner
-            android:layout_width="wrap_content"
-            android:hint="Select Gender"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="30dp"
             android:id="@+id/genderSelection"
-            android:textColor="@color/black"
-            android:layout_height="wrap_content">
-        </com.jaredrummler.materialspinner.MaterialSpinner>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="Select Gender"
+            android:textColor="@color/black"></com.jaredrummler.materialspinner.MaterialSpinner>
 
         <Button
-            android:layout_width="match_parent"
-            android:background="@drawable/button_bg"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:layout_marginEnd="30dp"
-            android:text="Add Child"
             android:id="@+id/actionAddChild"
-            android:layout_height="wrap_content">
-        </Button>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/button_bg"
+            android:text="Add Child"
+            android:textAllCaps="false"
+            android:textColor="@color/white"></Button>
 
     </LinearLayout>
 

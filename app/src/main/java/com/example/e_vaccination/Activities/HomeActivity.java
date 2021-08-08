@@ -60,6 +60,9 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
         int itemId = item.getItemId();
         switch (itemId) {
+            case R.id.menu_home:
+                loadFragment(new PatientHomeFragment());
+                break;
             case R.id.menu_profile:
                 loadFragment(new ProfileFragment());
                 break;
@@ -84,7 +87,6 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 
     private void shareApp() {
