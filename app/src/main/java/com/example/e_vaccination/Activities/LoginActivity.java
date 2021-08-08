@@ -113,7 +113,10 @@ public class LoginActivity extends BaseActivity {
                                 startActivity(new Intent(LoginActivity.this, AddChildFragment.class));
                                 Toast.makeText(LoginActivity.this, "Login As Patient", Toast.LENGTH_SHORT).show();
                                 break;
+
                         }
+
+                        finish();
 
 
                     }

@@ -9,15 +9,17 @@ public class User {
     private String uc;
     private String uid;
     private String userType;
+    private String image;
 
     public User() {
 
     }
 
-    public User(String name, String email, String address, String number, String district, String uc, String uid, String userType) {
+    public User(String name, String email, String address, String number, String district, String uc, String uid, String userType, String image) {
         this.name = name;
         this.email = email;
         this.address = address;
+        this.image = image;
         this.number = number;
         this.district = district;
         this.uc = uc;
@@ -55,5 +57,9 @@ public class User {
 
     public String getUserType() {
         return userType;
+    }
+
+    public String getImage() {
+        return image;
     }
 }

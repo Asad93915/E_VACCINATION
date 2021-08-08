@@ -10,10 +10,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import com.example.e_vaccination.BuildConfig;
 import com.example.e_vaccination.Fargments.PatientHomeFragment;
+import com.example.e_vaccination.Fargments.navigation.ProfileFragment;
 import com.example.e_vaccination.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,7 +61,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         int itemId = item.getItemId();
         switch (itemId) {
             case R.id.menu_profile:
-                // todo open profile fragment
+                loadFragment(new ProfileFragment());
                 break;
             case R.id.menu_notification:
                 // todo open notification fragment

@@ -110,7 +110,8 @@ public class SignupActivity extends BaseActivity {
                 districts[mDistrictSpinner.getSelectedIndex()],
                 selectedUC,
                 uid,
-                "patient"
+                "patient",
+                ""
 
         );
 

@@ -20,7 +20,6 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.E_VACCINATION.NoActionBar"></activity>
         <activity android:name=".testing" />
-        <activity android:name=".Schedule" />
         <activity android:name=".Fargments.AddChildFragment" />
         <activity android:name=".Nutrition_Supervisor" />
         <activity android:name=".Worker" />

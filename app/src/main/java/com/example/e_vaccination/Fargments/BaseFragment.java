@@ -13,7 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.e_vaccination.R;
+import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.Logging;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public abstract class BaseFragment extends Fragment {
@@ -135,9 +139,18 @@ public abstract class BaseFragment extends Fragment {
 
     }
 
+    public final DatabaseReference getReference() {
+        return FirebaseDatabase.getInstance().getReference();
+    }
+
     public final void startActionActivity(@NonNull String action) {
         startActivity(new Intent(action));
         slogging.info("System app activity started for action : " + action);
+    }
+
+    public final DatabaseReference getUserRef() {
+        return FirebaseDatabase.getInstance().getReference().child(AppConstants.USERS)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     private String getClassTAg() {

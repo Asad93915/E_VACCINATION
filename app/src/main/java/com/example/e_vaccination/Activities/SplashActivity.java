@@ -79,6 +79,8 @@ public class SplashActivity extends BaseActivity {
                                     Toast.makeText(view.getContext(), "Login As Patient", Toast.LENGTH_SHORT).show();
                                     break;
                             }
+
+                            finish();
                         }
 
                         @Override
