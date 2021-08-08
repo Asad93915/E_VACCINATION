@@ -1,4 +1,4 @@
-package com.example.e_vaccination.Fargments;
+package com.example.e_vaccination.Fargments.navigation;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -26,6 +26,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.example.e_vaccination.Fargments.BaseFragment;
 import com.example.e_vaccination.PasswordView;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.Global;
@@ -36,12 +37,14 @@ import com.google.firebase.storage.StorageReference;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 import static android.app.Activity.RESULT_OK;
 
 
 public class ProfileFragment extends BaseFragment {
     private Uri mImageUri;
-    private ImageView userProfile;
+    private CircleImageView userProfile;
     private static final int PERMISSION_CODE = 10101;
     private static final int IMAGE_PICK_CODE = 10102;
     private StorageReference mStorageRef;
@@ -65,7 +68,7 @@ public class ProfileFragment extends BaseFragment {
         TextView tvname = getView().findViewById(R.id.user_profile_name);
         TextView tvEmail = getView().findViewById(R.id.user_profile_email);
 
-        tvname.setText(mAuth.getCurrentUser().getDisplayName());
+        tvname.setText(Global.currentUSer.getName());
         tvEmail.setText(mAuth.getCurrentUser().getEmail());
 
         getView().findViewById(R.id.actionPickImage).setOnClickListener(v -> {
@@ -223,10 +226,12 @@ public class ProfileFragment extends BaseFragment {
             FirebaseAuth.getInstance().getCurrentUser().updatePassword(password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
+                            dialog.dismiss();
                             mPB.dismiss();
                             Toast.makeText(getActivity(), "Password updated successfully", Toast.LENGTH_SHORT).show();
 
                         } else {
+                            dialog.dismiss();
                             mPB.dismiss();
                             Toast.makeText(getActivity(), "" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
-import com.example.e_vaccination.models.Child;
+import com.example.e_vaccination.models.Schedule;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,80 +24,49 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class ChildernsViewAdapter extends RecyclerView.Adapter<ChildernsViewAdapter.ViewHolder> {
-    private final List<Child> childers;
+public class SchedulesAdapter extends RecyclerView.Adapter<SchedulesAdapter.ViewHolder> {
+    private final List<Schedule> schedules;
 
-    public ChildernsViewAdapter(List<Child> children) {
-        this.childers = children;
+    public SchedulesAdapter(List<Schedule> schedules) {
+        this.schedules = schedules;
     }
 
 
     @NonNull
     @Override
-    public ChildernsViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_childerns_view, parent, false);
+    public SchedulesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_view_schedules, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChildernsViewAdapter.ViewHolder holder, int position) {
-        Child item = childers.get(position);
-        if (item == null || item.getName() == null) return;
-        holder.mName.setText(item.getName());
-        holder.mDOB.setText(item.getDob());
+    public void onBindViewHolder(@NonNull SchedulesAdapter.ViewHolder holder, int position) {
+        Schedule item = schedules.get(position);
+        if (item == null || item.getTittle() == null) return;
+        holder.mTittle.setText(item.getTittle());
+        holder.mDate.setText(item.getDate());
 
         holder.itemView.setOnClickListener(v -> {
 //            deleteCategory(holder.itemView.getContext(), item.getKey());
         });
 
-        Glide.with(holder.itemView.getContext())
-                .load(item.getImage())
-                .into(holder.mImage);
+
     }
 
-    private void deleteCategory(Context context, String key) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        View dView = LayoutInflater.from(context).inflate(R.layout.delete_update, null);
-        builder.setView(dView);
-        final AlertDialog dialog = builder.create();
-
-        dView.findViewById(R.id.actionDelete).setOnClickListener(v -> {
-            FirebaseDatabase.getInstance().getReference()
-                    .child(AppConstants.USERS)
-                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                    .child(AppConstants.Childerns)
-                    .child(key)
-                    .removeValue().addOnCompleteListener(task -> {
-                Toast.makeText(context, "Deleted Successfully ...", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-
-            });
-
-        });
-
-        dView.findViewById(R.id.actionCancel).setOnClickListener(v1 -> dialog.dismiss());
-
-
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog.setCancelable(false);
-        dialog.show();
-    }
 
     @Override
     public int getItemCount() {
-        return childers.size();
+        return schedules.size();
     }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView mName, mDOB;
-        private CircleImageView mImage;
+        private final TextView mTittle, mDate;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mName = itemView.findViewById(R.id.listview_name);
-            mImage = itemView.findViewById(R.id.listview_image);
-            mDOB = itemView.findViewById(R.id.list_item_dob);
+            mTittle = itemView.findViewById(R.id.schedule_tittle);
+            mDate = itemView.findViewById(R.id.schedule_date);
         }
     }
 

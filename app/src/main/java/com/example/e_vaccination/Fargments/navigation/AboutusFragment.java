@@ -1,4 +1,4 @@
-package com.example.e_vaccination.Fargments;
+package com.example.e_vaccination.Fargments.navigation;
 
 import android.os.Bundle;
 
