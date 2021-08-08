@@ -1,4 +1,4 @@
-package com.example.e_vaccination;
+package com.example.e_vaccination.Activities.nutrition;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -9,9 +9,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
+import com.example.e_vaccination.Utils.AppUtils;
 import com.example.e_vaccination.models.Vaccine;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
@@ -79,24 +80,28 @@ public class AssignVaccineActivity extends AppCompatActivity {
                 return;
             }
 
-            String key = getIntent().getStringExtra("key");
+            String uid = getIntent().getStringExtra("key");
+            String key = AppUtils.getRandomKey();
+
 
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("date", date);
-            hashMap.put("uid", key);
+            hashMap.put("uid", uid);
+            hashMap.put("key", key);
             hashMap.put("status", false);
+            hashMap.put("name", vaccines.get(mVaccinesSpinner.getSelectedIndex()));
             hashMap.put("description", description);
             hashMap.put("district", districts[mDistrictSpinner.getSelectedIndex()]);
             hashMap.put("uc", getSelectedUC());
 
             FirebaseDatabase.getInstance().getReference()
-                    .child("VaccinesSchedule").child(key).push().setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Toast.makeText(AssignVaccineActivity.this, "Vaccine assigned successfully to vaccinator...", Toast.LENGTH_SHORT).show();
-                    new Handler().postDelayed(() -> finish(), 500);
-                }
-            });
+                    .child("VaccinesSchedule").child(uid).
+                    child(key).
+                    setValue(hashMap).
+                    addOnSuccessListener(unused -> {
+                        Toast.makeText(AssignVaccineActivity.this, "Vaccine assigned successfully to vaccinator...", Toast.LENGTH_SHORT).show();
+                        new Handler().postDelayed(() -> finish(), 500);
+                    });
 
         });
     }
