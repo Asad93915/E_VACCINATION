@@ -20,6 +20,7 @@ import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.AppUtils;
 import com.example.e_vaccination.models.Child;
+import com.example.e_vaccination.models.Vaccine;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,6 +28,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.Executors;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -151,12 +154,20 @@ public class AddChildFragment extends BaseFragment {
                 .child(AppConstants.Childerns)
                 .child(key)
                 .setValue(child).addOnCompleteListener(task -> {
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getActivity(), "Child added successfully .", Toast.LENGTH_SHORT).show();
-                    if (AppUtils.isProgressBarShowing) AppUtils.dismissProgressBar();
+
+            getActivity().runOnUiThread(() -> {
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("date", new Date(System.currentTimeMillis()) + "");
+                hashMap.put("status", false);
+                for (Vaccine vaccine : AppConstants.vaccines()) {
+                    hashMap.put("key", AppUtils.getRandomKey());
+                    hashMap.put("name", vaccine.getVaccineName());
+
+                    getChilderRef(key).child(AppUtils.getRandomKey()).setValue(hashMap);
                 }
+
+                Toast.makeText(getActivity(), "Child added successfully .", Toast.LENGTH_SHORT).show();
+                if (AppUtils.isProgressBarShowing) AppUtils.dismissProgressBar();
             });
         }).addOnFailureListener(new OnFailureListener() {
             @Override

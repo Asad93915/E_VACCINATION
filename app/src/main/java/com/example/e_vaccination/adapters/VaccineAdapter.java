@@ -42,11 +42,14 @@ public class VaccineAdapter extends RecyclerView.Adapter<VaccineAdapter.ViewHold
         holder.vaccinationName.setText(item.getVaccineName());
         holder.vaccinationStatus.setText("Pending");
 
-//        if (childVaccines.size() > 0)
-//            if (contains(childVaccines.get(position).getName())) {
-//                holder.vaccinationStatus.setText("Done");
-//                holder.previewVaccineDate.setText(childVaccines.get(position).getDate());
-//            }
+        if (childVaccines.size() > 0) {
+            if (isVaccinated(item.getVaccineName())) {
+                holder.vaccinationStatus.setText("Done");
+                holder.previewVaccineDate.setText(childVaccines.get(position).getDate());
+            } else {
+                holder.vaccinationStatus.setText("Pending");
+            }
+        }
 
 
         holder.vaccinationTypeImage.setImageResource(item.getVaccineType().equals("drop") ? R.drawable.icon_drop : R.drawable.icon_inj);
@@ -78,11 +81,11 @@ public class VaccineAdapter extends RecyclerView.Adapter<VaccineAdapter.ViewHold
         }
     }
 
-    private boolean contains(String string) {
-        for (Vaccine vaccine : vaccines)
-            if (vaccine.getVaccineName().toLowerCase().equals(string.toLowerCase()))
-                return true;
-
+    private boolean isVaccinated(String name) {
+        for (ChildVaccines vaccines : childVaccines) {
+            if (name.toLowerCase().equals(vaccines.getName().toLowerCase()))
+                return vaccines.isStatus();
+        }
         return false;
     }
 

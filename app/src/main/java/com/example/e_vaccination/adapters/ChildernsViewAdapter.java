@@ -55,6 +55,7 @@ public class ChildernsViewAdapter extends RecyclerView.Adapter<ChildernsViewAdap
 
         Glide.with(holder.itemView.getContext())
                 .load(item.getImage())
+                .placeholder(R.drawable.logo)
                 .into(holder.mImage);
     }
 

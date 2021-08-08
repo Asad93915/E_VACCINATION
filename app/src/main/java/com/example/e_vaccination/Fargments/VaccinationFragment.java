@@ -16,6 +16,9 @@ import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.Global;
 import com.example.e_vaccination.adapters.VaccineAdapter;
 import com.example.e_vaccination.models.ChildVaccines;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class VaccinationFragment extends BaseFragment {
-    private final List<ChildVaccines> vaccines = new ArrayList<>();
+    private final List<ChildVaccines> mVaccinesList = new ArrayList<>();
     private VaccineAdapter mAdapter;
 
     @Nullable
@@ -34,7 +37,7 @@ public class VaccinationFragment extends BaseFragment {
         RecyclerView mRecyclerView = view.findViewById(R.id.vaccinationRecyclerView);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2, RecyclerView.VERTICAL, false));
 
-        mAdapter = new VaccineAdapter(vaccines);
+        mAdapter = new VaccineAdapter(mVaccinesList);
         mRecyclerView.setAdapter(mAdapter);
 
         TextView name = view.findViewById(R.id.previewChildName);
@@ -48,7 +51,33 @@ public class VaccinationFragment extends BaseFragment {
                 .load(Global.selectedChildern.getImage())
                 .into(image);
 
+        loadVaccinesData();
+
 
         return view;
+    }
+
+    private void loadVaccinesData() {
+        getChilderRef(Global.selectedChildern.getKey())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.getValue() == null) return;
+
+                        mVaccinesList.clear();
+
+                        for (DataSnapshot snap : snapshot.getChildren()) {
+                            ChildVaccines vaccines = snap.getValue(ChildVaccines.class);
+                            mVaccinesList.add(vaccines);
+                        }
+
+                        mAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 }

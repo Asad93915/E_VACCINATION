@@ -157,5 +157,9 @@ public abstract class BaseFragment extends Fragment {
         return getClass().getSimpleName();
     }
 
+    public final DatabaseReference getChilderRef(String key){
+        return getUserRef().child("Childerns").child(key).child("vaccines");
+    }
+
 
 }
