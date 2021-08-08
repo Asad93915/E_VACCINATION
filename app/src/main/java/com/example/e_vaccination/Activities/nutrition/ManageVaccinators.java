@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.e_vaccination.AssignVaccineActivity;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.adapters.VaccinatorsAdapter;

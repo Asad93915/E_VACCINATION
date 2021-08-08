@@ -133,6 +133,20 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/actionLogout"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="#97B336"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
 
         </LinearLayout>
 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/gray_button_bg"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/vaccineTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Vaccine"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/district_uc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="District/UC"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/vaccineTittle"
+        app:layout_constraintTop_toBottomOf="@+id/vaccineTittle" />
+
+    <TextView
+        android:id="@+id/vaccination_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Date"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/district_uc"
+        app:layout_constraintTop_toBottomOf="@+id/district_uc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/status"
+        android:text="Status"
+        android:textColor="@color/startblue"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vaccination_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vaccineTittle"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Description"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/vaccination_date"
+        app:layout_constraintTop_toBottomOf="@+id/vaccination_date" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"></View>
+</androidx.constraintlayout.widget.ConstraintLayout>

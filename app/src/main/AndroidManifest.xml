@@ -23,13 +23,13 @@
         <activity android:name=".Fargments.AddChildFragment" />
         <activity android:name=".Activities.nutrition.Nutrition_Supervisor" />
         <activity android:name=".Worker" />
-        <activity android:name=".Vacccinator" />
+        <activity android:name=".Activities.VacccinatorMainActivity" />
         <activity android:name=".Polio" />
         <activity android:name=".user_activity" />
         <activity android:name=".InfoAboutVaccination" />
         <activity android:name=".Activities.nutrition.ManageVaccinators" />
         <activity android:name=".Fargments.PatientHomeFragment" />
-        <activity android:name=".AssignVaccineActivity" />
+        <activity android:name=".Activities.nutrition.AssignVaccineActivity" />
         <activity android:name=".Activities.BaseActivity" />
         <activity android:name=".Activities.SignupActivity" />
         <activity android:name=".Activities.LoginActivity" />

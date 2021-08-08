@@ -5,17 +5,23 @@ public class Vaccinator {
     private String email;
     private String uid;
     private String phone;
+    private String password;
 
 
     public Vaccinator() {
 
     }
 
-    public Vaccinator(String name, String email, String uid, String phone) {
+    public Vaccinator(String name, String email, String uid, String phone,String password) {
         this.name = name;
+        this.password=password;
         this.email = email;
         this.uid = uid;
         this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getName() {

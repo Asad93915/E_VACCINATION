@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.e_vaccination.Activities.BaseActivity;
+import com.example.e_vaccination.Activities.LoginActivity;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.AppUtils;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class Nutrition_Supervisor extends AppCompatActivity {
+public class Nutrition_Supervisor extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,13 @@ public class Nutrition_Supervisor extends AppCompatActivity {
                 if (AppUtils.isProgressBarShowing) AppUtils.dismissProgressBar();
                 Toast.makeText(Nutrition_Supervisor.this, "Vaccinator added successfully.", Toast.LENGTH_SHORT).show();
             });
+        });
+
+        findViewById(R.id.actionLogout).setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            newActivity(LoginActivity.class);
+            finish();
+
         });
 
         findViewById(R.id.actionManageVaccinator).setOnClickListener(v -> {
