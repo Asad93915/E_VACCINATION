@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.e_vaccination.Fargments.AddChildFragment;
-import com.example.e_vaccination.Nutrition_Supervisor;
+import com.example.e_vaccination.Activities.nutrition.Nutrition_Supervisor;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppUtils;
 import com.example.e_vaccination.Utils.Global;

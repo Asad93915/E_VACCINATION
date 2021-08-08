@@ -12,13 +12,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.e_vaccination.Activities.nutrition.Nutrition_Supervisor;
 import com.example.e_vaccination.Fargments.AddChildFragment;
-import com.example.e_vaccination.Nutrition_Supervisor;
 import com.example.e_vaccination.R;
-import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.Global;
 import com.example.e_vaccination.Vacccinator;
-import com.example.e_vaccination.Worker;
 import com.example.e_vaccination.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -63,16 +61,13 @@ public class SplashActivity extends BaseActivity {
                                     newActivity(HomeActivity.class);
                                     break;
                                 case Vaccinator:
-                                    startActivity(new Intent(view.getContext(), Vacccinator.class));
+                                    newActivity(Vacccinator.class);
                                     Toast.makeText(view.getContext(), "Login As a Vaccinator", Toast.LENGTH_SHORT).show();
                                     break;
-                                case AppConstants.Worker:
-                                    startActivity(new Intent(view.getContext(), Worker.class));
-                                    Toast.makeText(view.getContext(), "Login As Worker", Toast.LENGTH_SHORT).show();
-                                    break;
+
                                 case NutritionSUPERVISOR:
-                                    startActivity(new Intent(view.getContext(), Nutrition_Supervisor.class));
-                                    Toast.makeText(view.getContext(), "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(view.getContext(), "Login As Nutrition Supervisor", Toast.LENGTH_SHORT).show();
+                                    newActivity(Nutrition_Supervisor.class);
                                     break;
                                 default:
                                     startActivity(new Intent(view.getContext(), AddChildFragment.class));
@@ -129,7 +124,6 @@ public class SplashActivity extends BaseActivity {
         logoAnim.startAnimation(animation1);
 
     }
-
 
 
 }

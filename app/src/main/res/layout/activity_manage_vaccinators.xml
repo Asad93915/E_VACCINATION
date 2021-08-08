@@ -3,7 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".testing">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vaccinatorsRecyclerView"
+        android:layout_width="match_parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/custom_view_schedules"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

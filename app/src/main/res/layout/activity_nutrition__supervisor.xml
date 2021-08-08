@@ -1,158 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Nutrition_Supervisor">
+    android:orientation="vertical"
+    tools:context=".Activities.nutrition.Nutrition_Supervisor">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <ImageView
-                android:layout_width="100dp"
                 android:id="@+id/logoUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_height="130dp"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/logo" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:textSize="20dp"
-                android:textAllCaps="true"
-                android:text="E-Vaccination"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_gravity="center"
-                android:gravity="center"/>
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="E-Vaccination"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
             <EditText
+                android:id="@+id/vaccinatorName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/etname"
                 android:background="@drawable/border"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:inputType="text"
                 android:hint="Name"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
+                android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/vaccinatorEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:inputType="textEmailAddress"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/border"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:id="@+id/etemail"
                 android:hint="E-Mail"
-                android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:inputType="phone"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border"
-                android:layout_marginTop="15dp"
+                android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:id="@+id/etphoneNo"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/vaccinatorPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
                 android:hint="Phone Number"
+                android:inputType="phone"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
                 android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
+                android:textSize="14sp" />
+
             <EditText
+                android:id="@+id/vaccinatorPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:inputType="textPassword"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/border"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:id="@+id/etpassword"
-                android:hint="Password"
-                android:textColorHint="@color/black"
-                android:textSize="20sp"
-                android:textAllCaps="false"/>
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="70dp"
                 android:layout_marginRight="20dp"
-                android:id="@+id/radioGroup"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/vaccinator"
-                    android:layout_marginLeft="50dp"
-                    android:text="vaccinator"
-                    android:textSize="12sp"
-                    android:textAllCaps="false"
-                    android:textColorHint="@color/black"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/black"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/worker"
-                    android:layout_marginLeft="50dp"
-                    android:textSize="12sp"
-                    android:text="Worker"
-                    android:textAllCaps="false"
-                    android:textColorHint="@color/black"
-                    android:textColor="@color/black"
-                    android:buttonTint="@color/black"/>
-            </RadioGroup>
+                android:background="@drawable/border"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="14sp" />
+
 
             <Button
-                android:id="@+id/Createaccount"
+                android:id="@+id/actionAddVaccinator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
                 android:layout_marginRight="30dp"
+                android:background="@drawable/button_bg"
                 android:backgroundTint="#97B336"
-                android:text="Create Account"
-                android:textAllCaps="false" />
+                android:text="Add Vaccinator"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:id="@+id/actionManageVaccinator"
                 android:layout_marginRight="30dp"
+                android:background="@drawable/button_bg"
                 android:backgroundTint="#97B336"
-                android:text="Update_Vaccination_Schedule"
-                android:textAllCaps="false" />
+                android:text="Manage Vaccinator"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
 
         </LinearLayout>
 
