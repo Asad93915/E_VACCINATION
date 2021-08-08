@@ -27,7 +27,7 @@ public class PatientHomeFragment extends BaseFragment {
         });
 
         view.findViewById(R.id.actionVaccinationSchedule).setOnClickListener(v -> {
-
+            open(new SchedulesFragment());
         });
         return view;
     }

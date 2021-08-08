@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,6 +17,7 @@ import com.example.e_vaccination.BuildConfig;
 import com.example.e_vaccination.Fargments.PatientHomeFragment;
 import com.example.e_vaccination.Fargments.navigation.ProfileFragment;
 import com.example.e_vaccination.R;
+import com.example.e_vaccination.Utils.Global;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.annotations.NotNull;
@@ -43,6 +46,13 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
         //navigation drawer listener
         navigationView.setNavigationItemSelectedListener(this);
+
+        View hView = navigationView.getHeaderView(0);
+        TextView name = hView.findViewById(R.id.nav_user_name);
+        TextView email = hView.findViewById(R.id.nav_user_email);
+
+        name.setText(Global.currentUSer.getName());
+        email.setText(Global.currentUSer.getEmail());
 
         loadFragment(new PatientHomeFragment());
 

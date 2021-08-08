@@ -24,7 +24,6 @@
                 android:src="@drawable/polio_add" />
 
             <LinearLayout
-                android:id="@+id/actionAddNewChild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -41,6 +40,7 @@
 
                 <Button
                     android:layout_width="match_parent"
+                    android:id="@+id/actionAddNewChild"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:backgroundTint="#97B336"
@@ -51,7 +51,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/actionViewChild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -71,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:id="@+id/actionViewChild"
                     android:backgroundTint="#97B336"
                     android:hint="View Child's"
                     android:textAllCaps="false"
@@ -80,7 +80,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/actionVaccinationSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -96,7 +95,7 @@
                     android:background="@drawable/ic_baseline_calendar_today_24" />
 
                 <Button
-                    android:id="@+id/viewVacSchedule"
+                    android:id="@+id/actionVaccinationSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"

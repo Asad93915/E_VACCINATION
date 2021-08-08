@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SchedulesFragment extends BaseFragment {
@@ -32,6 +33,11 @@ public class SchedulesFragment extends BaseFragment {
 
         RecyclerView mRecyclerViw = view.findViewById(R.id.schedulesRecyclerView);
         mRecyclerViw.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        // todo remove static valuces later
+        scheduleList.add(new Schedule("Covid-19 Vaccine", "272883ujdljjdfyeure", new Date(System.currentTimeMillis()) + ""));
+        scheduleList.add(new Schedule("Covid-19 Vaccine", "272883ujdljjdfyeure", new Date(System.currentTimeMillis()) + ""));
+        scheduleList.add(new Schedule("Covid-19 Vaccine", "272883ujdljjdfyeure", new Date(System.currentTimeMillis()) + ""));
 
         mAdapter = new SchedulesAdapter(scheduleList);
         mRecyclerViw.setAdapter(mAdapter);
