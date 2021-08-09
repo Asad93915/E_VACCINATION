@@ -7,96 +7,141 @@
     android:layout_height="match_parent"
     tools:context=".Polio">
 
-<!--    <VideoView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:id="@+id/videoView"/>-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="328dp"
-        android:src="@drawable/polio_add" />
-</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="328dp"
+                    android:src="@drawable/polio_add" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="230dp"
                     android:text=" پولیو کے ٹیکے کیوں لگائے جاتے ہیں"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="230dp"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
-                    android:text="بیماریوں کے کنٹرول اور روک تھام کے مرکز کی سفارش کی گئی ہے کہ پولیو ، یا پولیو امیلائٹس سے بچاؤ کے ل بچوں کو پولیو ویکسین پلائیں۔  غیر فعال پولیو ویکسین (آئی پی وی) واحد پولیو ویکسین ہے جو 2000 میں امریکہ میں دی جارہی ہے۔ آئی پی وی مریض کی عمر کے لحاظ سے ٹانگ یا بازو میں انجکشن دے کر دیا جاتا ہے۔   				"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
-                    android:textColor="@color/black"/>
-                ِ<TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="شیر خوار بچوں کو پولیو ویکسینیشن کب لگانی چاہیے؟"
-                android:layout_marginLeft="128dp"
-                android:textStyle="bold"/>
+                    android:text="بیماریوں کے کنٹرول اور روک تھام کے مرکز کی سفارش کی گئی ہے کہ پولیو ، یا پولیو امیلائٹس سے بچاؤ کے ل بچوں کو پولیو ویکسین پلائیں۔  غیر فعال پولیو ویکسین (آئی پی وی) واحد پولیو ویکسین ہے جو 2000 میں امریکہ میں دی جارہی ہے۔ آئی پی وی مریض کی عمر کے لحاظ سے ٹانگ یا بازو میں انجکشن دے کر دیا جاتا ہے۔   				"
+                    android:textColor="@color/black" />
                 ِ
-                ِِ<TextView
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="128dp"
+                    android:text="شیر خوار بچوں کو پولیو ویکسینیشن کب لگانی چاہیے؟"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                ِ
+                ِِ
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="بیماریوں کے کنٹرول اور روک تھام کے مرکز کی  سفارش کی گئی ہے کہ تمام بچوں کو غیر فعال پولیو ویکسین (آئی پی وی) کی چار خوراکیں ملیں ، جس میں درج ذیل عمروں میں ہر ایک پر ایک خوراک ہو۔ "
-                    android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp"
+                    android:text="بیماریوں کے کنٹرول اور روک تھام کے مرکز کی  سفارش کی گئی ہے کہ تمام بچوں کو غیر فعال پولیو ویکسین (آئی پی وی) کی چار خوراکیں ملیں ، جس میں درج ذیل عمروں میں ہر ایک پر ایک خوراک ہو۔ "
+                    android:textColor="@color/black" />
                 ِ
             </LinearLayout>
-            ِِ<LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp">
-            <TextView
-                android:layout_width="wrap_content"
+            ِِ
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginLeft="202dp"
-                android:text="پہلی خوراک : 2 ماہ کی عمر میں"
-                android:textColorHint="@color/black"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginLeft="185dp"
-                android:text="دوسری خوراک :  4 ماہ کی عمر میں "
-                android:textColorHint="@color/black"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginLeft="152dp"
-                android:text="تیسری خوراک:  6 سے 18 ماہ کی عمر تک  "
-                android:textColorHint="@color/black"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_marginLeft="150dp"
-                android:text="چوتھی خوراک :  4 سے 6 سال کی عمر میں"
-                android:textColorHint="@color/black"/>
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="202dp"
+                    android:text="پہلی خوراک : 2 ماہ کی عمر میں"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="185dp"
+                    android:text="دوسری خوراک :  4 ماہ کی عمر میں "
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="152dp"
+                    android:text="تیسری خوراک:  6 سے 18 ماہ کی عمر تک  "
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="چوتھی خوراک :  4 سے 6 سال کی عمر میں"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/actioncall"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:backgroundTint="@color/grey_300"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_phone_enabled_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="1166"
+                    android:id="@+id/callNo"
+                    android:textColor="#AC000000"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
-    </ScrollView>>
+
+    </ScrollView>
+    >
 </LinearLayout>

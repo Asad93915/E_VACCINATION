@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 
+import com.example.e_vaccination.Activities.HomeActivity;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.AppUtils;
@@ -167,6 +168,8 @@ public class AddChildFragment extends BaseFragment {
                 }
 
                 Toast.makeText(getActivity(), "Child added successfully .", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getActivity(),HomeActivity.class);
+                startActivity(intent);
                 if (AppUtils.isProgressBarShowing) AppUtils.dismissProgressBar();
             });
         }).addOnFailureListener(new OnFailureListener() {

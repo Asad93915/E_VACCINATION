@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,7 @@
         <activity android:name=".Worker" />
         <activity android:name=".Activities.VacccinatorMainActivity" />
         <activity android:name=".Polio" />
-        <activity android:name=".user_activity" />
+        <activity android:name=".UserActivity" />
         <activity android:name=".InfoAboutVaccination" />
         <activity android:name=".Activities.nutrition.ManageVaccinators" />
         <activity android:name=".Fargments.PatientHomeFragment" />

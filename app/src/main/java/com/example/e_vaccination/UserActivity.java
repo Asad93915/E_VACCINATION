@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.example.e_vaccination.Activities.BaseActivity;
 import com.example.e_vaccination.Fargments.PatientHomeFragment;
 
-public class user_activity extends BaseActivity {
+public class UserActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,13 @@ public class user_activity extends BaseActivity {
         polio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(user_activity.this,Polio.class));
+                startActivity(new Intent(UserActivity.this,Polio.class));
             }
         });
         vaccintion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(user_activity.this, PatientHomeFragment.class));
+                startActivity(new Intent(UserActivity.this, InfoAboutVaccination.class));
             }
         });
     }
