@@ -1,6 +1,7 @@
 package com.example.e_vaccination.Fargments;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.Executors;
@@ -43,7 +46,8 @@ public class AddChildFragment extends BaseFragment {
     private CircleImageView mImage;
     private Uri mImageUri;
     private StorageReference mStorageRef;
-    private EditText name, dob;
+    private EditText name;
+    private TextView dob;
 
     private MaterialSpinner genderSpinner;
     private final String[] genders = {"Girl", "Boy", "Others"};
@@ -66,6 +70,23 @@ public class AddChildFragment extends BaseFragment {
 
         view.findViewById(R.id.actionPickImage).setOnClickListener(v -> {
             loadImage();
+        });
+
+        dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog dialog = new DatePickerDialog(inflater.getContext(),
+                        android.R.style.Theme_DeviceDefault_Dialog,
+                        (view, year1, month1, dayOfMonth) -> {
+                            dob.setText(year1 + "/" + month1 + 1 + "/" + dayOfMonth);
+                        },
+                        year, month, day);
+                dialog.show();
+            }
         });
 
         view.findViewById(R.id.actionAddChild).setOnClickListener(v -> {
