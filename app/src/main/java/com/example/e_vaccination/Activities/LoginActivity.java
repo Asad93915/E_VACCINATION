@@ -15,7 +15,6 @@ import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.AppConstants;
 import com.example.e_vaccination.Utils.AppUtils;
 import com.example.e_vaccination.Utils.Global;
-import com.example.e_vaccination.Worker;
 import com.example.e_vaccination.models.User;
 import com.example.e_vaccination.models.Vaccinator;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -149,7 +148,7 @@ public class LoginActivity extends BaseActivity {
                                 Toast.makeText(LoginActivity.this, "Login As a Vaccinator", Toast.LENGTH_SHORT).show();
                                 break;
                             case Worker:
-                                startActivity(new Intent(LoginActivity.this, Worker.class));
+                                startActivity(new Intent(LoginActivity.this, PatientsActivity.class));
                                 Toast.makeText(LoginActivity.this, "Login As Worker", Toast.LENGTH_SHORT).show();
                                 break;
                             case NutritionSUPERVISOR:

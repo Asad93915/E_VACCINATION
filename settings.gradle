@@ -1,2 +1,3 @@
 include ':app'
 rootProject.name = "E_VACCINATION"
+include ':chat'

@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Dou you want to Delete ??"
+                    android:text="Vaccine done in assigned district and uc ??"
                     android:textColor="#383838"
                     android:textSize="16sp" />
 
@@ -54,7 +54,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="CONFIRM"
+                    android:text="DONE"
                     android:textColor="#fff"
                     android:textSize="14dp" />
 
