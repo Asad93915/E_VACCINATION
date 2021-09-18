@@ -18,7 +18,7 @@
             android:src="@drawable/profile_picture" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="12dp"
@@ -42,12 +42,31 @@
                 android:text="Date of birth"
                 android:textSize="14dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Vaccine Status : False"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:text="Done"
+                android:id="@+id/actionDoneVaccine"
+                android:background="@drawable/button_bg"
+                android:layout_gravity="right"
+                android:layout_height="wrap_content">
+            </Button>
+
         </LinearLayout>
+
+
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="5dp"
         android:background="@android:color/darker_gray" />
 </LinearLayout>
 

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -16,10 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E_VACCINATION"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.ChildVaccinationActivity"></activity>
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.E_VACCINATION.NoActionBar"></activity>
+            android:theme="@style/Theme.E_VACCINATION.NoActionBar" />
         <activity android:name=".testing" />
         <activity android:name=".Fargments.AddChildFragment" />
         <activity android:name=".Activities.nutrition.Nutrition_Supervisor" />

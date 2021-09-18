@@ -2,6 +2,7 @@ package com.example.e_vaccination.Activities;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.Global;
 import com.example.e_vaccination.adapters.VaccinatorScheduleAdapter;
+import com.example.e_vaccination.models.ChildVaccines;
 import com.example.e_vaccination.models.VaccinatorSchedule;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,13 +41,13 @@ public class VacccinatorMainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mAdapter = new VaccinatorScheduleAdapter(vaccinatorSchedules, position -> {
-            deleteCategory(VacccinatorMainActivity.this, vaccinatorSchedules.get(position).getKey());
+            Global.selecteVaccinatorSchedule = vaccinatorSchedules.get(position);
+            startActivity(new Intent(VacccinatorMainActivity.this, ChildVaccinationActivity.class));
         });
 
         mRecyclerView.setAdapter(mAdapter);
 
         loadSchedules();
-
 
     }
 
@@ -107,4 +109,6 @@ public class VacccinatorMainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
