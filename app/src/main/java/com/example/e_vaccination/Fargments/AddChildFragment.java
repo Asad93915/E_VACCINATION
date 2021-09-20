@@ -51,7 +51,7 @@ public class AddChildFragment extends BaseFragment {
     private TextView dob;
 
     private MaterialSpinner genderSpinner;
-    private final String[] genders = {"Girl", "Boy", "Others"};
+    private final String[] genders = {"Select gender", "Girl", "Boy", "Others"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,7 +93,9 @@ public class AddChildFragment extends BaseFragment {
         view.findViewById(R.id.actionAddChild).setOnClickListener(v -> {
             if (name.getText().toString().isEmpty() || dob.getText().toString().isEmpty())
                 Toast.makeText(getActivity(), "All Fields Required", Toast.LENGTH_SHORT).show();
-            else if (mImageUri == null)
+            else if (genders[genderSpinner.getSelectedIndex()].equals("Select gender")) {
+                Toast.makeText(getActivity(), "Please select gender", Toast.LENGTH_SHORT).show();
+            } else if (mImageUri == null)
                 Toast.makeText(getActivity(), "Please select image", Toast.LENGTH_SHORT).show();
             else
                 uploadFile();
@@ -189,7 +191,7 @@ public class AddChildFragment extends BaseFragment {
                 }
 
                 Toast.makeText(getActivity(), "Child added successfully .", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getActivity(),HomeActivity.class);
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
                 startActivity(intent);
                 if (AppUtils.isProgressBarShowing) AppUtils.dismissProgressBar();
             });
