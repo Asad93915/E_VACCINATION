@@ -86,22 +86,6 @@
                 android:textColorHint="@color/black"
                 android:textSize="@dimen/normal_text_size" />
 
-            <EditText
-                android:id="@+id/userAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/border"
-                android:hint="Address"
-                android:inputType="text"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textAllCaps="false"
-                android:textColorHint="@color/black"
-                android:textSize="@dimen/normal_text_size" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,6 +116,24 @@
                     android:textColor="@android:color/black" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/userAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/border"
+                android:hint="Address"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/normal_text_size" />
+
 
             <EditText
                 android:id="@+id/password"

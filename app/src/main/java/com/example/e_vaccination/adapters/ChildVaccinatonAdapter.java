@@ -34,7 +34,7 @@ public class ChildVaccinatonAdapter extends RecyclerView.Adapter<ChildVaccinaton
         this.childers = children;
         this.listener = listener;
     }
-
+        
 
     @NonNull
     @Override

@@ -3,6 +3,7 @@ package com.example.e_vaccination.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.e_vaccination.R;
@@ -20,7 +21,7 @@ public class SignupActivity extends BaseActivity {
     private EditText name, phoneNo, email, password;
     private String userType = "";
     private MaterialSpinner mDistrictSpinner, mUCSpinner;
-    private EditText address;
+    private TextView address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +46,17 @@ public class SignupActivity extends BaseActivity {
         });
 
         mDistrictSpinner.setOnItemSelectedListener((view, position, id, item) -> {
-            if (districts[position].toLowerCase().equals("lahore"))
+            if (districts[position].toLowerCase().equals("lahore")) {
                 mUCSpinner.setItems(lahoreUC);
-            else if (districts[position].toLowerCase().equals("qasoor"))
+                address.setText("District : " + districts[mDistrictSpinner.getSelectedIndex()] + " Union Council : " + lahoreUC[mUCSpinner.getSelectedIndex()]);
+            } else if (districts[position].toLowerCase().equals("qasoor")) {
                 mUCSpinner.setItems(qasoorUC);
-            else if (districts[position].toLowerCase().equals("narowall"))
+                address.setText("District : " + districts[mDistrictSpinner.getSelectedIndex()] + " Union Council : " + qasoorUC[mUCSpinner.getSelectedIndex()]);
+            } else if (districts[position].toLowerCase().equals("narowall")) {
                 mUCSpinner.setItems(narowallUC);
+                address.setText("District : " + districts[mDistrictSpinner.getSelectedIndex()] + " Union Council : " + narowallUC[mUCSpinner.getSelectedIndex()]);
+            }
+
         });
 
         findViewById(R.id.signUp).setOnClickListener(v -> {
@@ -60,8 +66,6 @@ public class SignupActivity extends BaseActivity {
                 email.setError("Email Required");
             else if (phoneNo.getText().toString().isEmpty() || phoneNo.getText().toString().length() < 11 || phoneNo.getText().toString().length() > 11)
                 phoneNo.setError("Enter valid phone number");
-            else if (address.getText().toString().isEmpty())
-                address.setError("Address required");
             else if (password.getText().toString().isEmpty())
                 password.setError("Enter a Password");
 
@@ -89,6 +93,7 @@ public class SignupActivity extends BaseActivity {
     private void initSpinners() {
         mDistrictSpinner.setItems(districts);
         mUCSpinner.setItems(lahoreUC);
+        address.setText("District : " + districts[mDistrictSpinner.getSelectedIndex()] + " Union Council : " + lahoreUC[mUCSpinner.getSelectedIndex()]);
     }
 
 
@@ -105,7 +110,7 @@ public class SignupActivity extends BaseActivity {
         User user = new User(
                 getText(name),
                 getText(email),
-                getText(address),
+                address.getText().toString(),
                 getText(phoneNo),
                 districts[mDistrictSpinner.getSelectedIndex()],
                 selectedUC,
