@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.e_vaccination.Fargments.PatientHomeFragment;
+import com.example.e_vaccination.Fargments.navigation.AboutusFragment;
 import com.example.e_vaccination.Fargments.navigation.ProfileFragment;
 import com.example.e_vaccination.R;
 import com.example.e_vaccination.Utils.Global;
@@ -82,7 +83,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                 shareApp();
                 break;
             case R.id.menu_about_us:
-                // todo open about us fragment
+                loadFragment(new AboutusFragment());
                 break;
             case R.id.menu_Logout:
                 FirebaseAuth.getInstance().signOut();

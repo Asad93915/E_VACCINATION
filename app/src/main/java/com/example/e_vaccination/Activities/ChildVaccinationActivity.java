@@ -72,7 +72,6 @@ public class ChildVaccinationActivity extends AppCompatActivity {
 
                                         Child childItem = child.getValue(Child.class);
 
-                                        childVaccinations.clear();
 
                                         for (DataSnapshot vaccine : child.child("vaccines").getChildren()) {
                                             if (vaccine.getValue() == null) return;

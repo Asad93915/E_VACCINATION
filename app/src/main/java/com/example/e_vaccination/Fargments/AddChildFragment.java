@@ -186,10 +186,11 @@ public class AddChildFragment extends BaseFragment {
                 hashMap.put("date", new Date(System.currentTimeMillis()) + "");
                 hashMap.put("status", false);
                 for (Vaccine vaccine : AppConstants.vaccines()) {
-                    hashMap.put("key", AppUtils.getRandomKey());
+                    String vaccineKey = AppUtils.getRandomKey();
+                    hashMap.put("key", vaccineKey);
                     hashMap.put("name", vaccine.getVaccineName());
 
-                    getChilderRef(key).child(AppUtils.getRandomKey()).setValue(hashMap);
+                    getChilderRef(key).child(vaccineKey).setValue(hashMap);
                 }
 
                 Toast.makeText(getActivity(), "Child added successfully .", Toast.LENGTH_SHORT).show();
