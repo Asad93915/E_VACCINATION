@@ -13,7 +13,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.e_vaccination.BuildConfig;
 import com.example.e_vaccination.Fargments.PatientHomeFragment;
 import com.example.e_vaccination.Fargments.navigation.ProfileFragment;
 import com.example.e_vaccination.R;
@@ -104,7 +103,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
         String shareMessage = "\nLet me recommend you this application\n\n";
-        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+        shareMessage = shareMessage + "https://i.diawi.com/sDXnMN";
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
         startActivity(Intent.createChooser(shareIntent, "choose one"));
     }

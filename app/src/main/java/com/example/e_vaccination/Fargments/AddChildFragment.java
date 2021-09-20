@@ -31,6 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -83,7 +84,8 @@ public class AddChildFragment extends BaseFragment {
                 DatePickerDialog dialog = new DatePickerDialog(inflater.getContext(),
                         android.R.style.Theme_DeviceDefault_Dialog,
                         (view, year1, month1, dayOfMonth) -> {
-                            dob.setText(year1 + "/" + month1 + 1 + "/" + dayOfMonth);
+                            LocalDate selectedDate = LocalDate.of(year, month + 1, dayOfMonth);
+                            dob.setText(selectedDate.toString());
                         },
                         year, month, day);
                 dialog.show();
